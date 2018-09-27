@@ -1,6 +1,7 @@
 package avaliacao;
 
 import java.awt.Color;
+import java.util.Date;
 
 import org.joda.time.LocalTime;
 
@@ -11,7 +12,7 @@ import ij.process.ImageProcessor;
 public class Principal {
 
 	public static void main(String[] args) {
-		ImagePlus imp = IJ.openImage("../Avaliacao_N2/img/b.jpg");
+		ImagePlus imp = IJ.openImage("../Avaliacao_N1/img/b.jpg");
 		ImageProcessor ip = imp.getProcessor();
 		ip.setColor(Color.YELLOW);
 		ip.setLineWidth(4);
@@ -22,6 +23,9 @@ public class Principal {
 	public LocalTime getHorario() {
 		LocalTime currentTime = new LocalTime();
 		System.out.println("The current local time is: " + currentTime.toString());
+		System.out.println(currentTime.toDateTimeToday().toDate().getTime());
+		System.out.println(new Date().getTime());
+		System.out.println(new Date().getTime() - currentTime.toDateTimeToday().toDate().getTime());
 		return currentTime;
 	}
 
